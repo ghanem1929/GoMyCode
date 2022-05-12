@@ -1,0 +1,311 @@
+*{
+    font-family: Roboto,Arial,sans-serif;
+    color: #747474;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+  }
+
+body{
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+color: #747474;
+}
+
+.Container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 3;
+    background: hsla(0,0%,100%,.98);
+  
+}
+.Container div {
+    max-width: 1015px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Container div h1 {
+    margin: 2px 0 0;
+    line-height: 68px;
+    display: inline-block;
+    position: relative;
+}
+.Container div h1 a{
+    text-decoration: none;
+    color: #3d83df; 
+}
+
+.Container div h1 a img{
+    width: 268px;
+    height: 30px;
+    text-align: center;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.main-nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    float: right;
+    height: 70px;
+}
+.main-nav ul{
+    list-style: none;
+font-size: .9375rem;
+font-weight: 400;
+line-height: 2em;
+padding: 1.33em 0;
+}
+
+.main-nav ul li{
+    display: inline-block;
+}
+
+.main-nav ul li a {
+    color: #ababab;
+display: block;
+text-decoration: none;
+padding: 0 .6em;
+}
+
+.main-nav ul li a:hover{
+    color: #00b39b;
+}
+
+
+
+.leadSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 70px;
+    padding: 33px 20px;
+}
+
+.leadSection img{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.leadSection h1{
+    font-size: 2em;
+    text-align: center;
+    color: #00b39b;
+    margin: 1em 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -.3px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 1015px;
+}
+.gridItem{
+    padding: 10px;
+}
+
+
+p{
+    margin: .8em 0;
+line-height: 1.75;
+font-weight: 400;
+}
+
+.secondSection{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0 auto;
+    max-width: 1015px;
+}
+
+.secondSection .card{
+    height: 365px;
+    background-color: #00b39b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.secondSection .card i {
+    font-size: 24px;
+    color: white;
+}
+
+.secondSection .card h3{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 10px;
+}
+
+.secondSection .card h4{
+    color: white;
+    font-size: 24px;
+    line-height: 27px;
+}
+
+.secondSection .card select{
+    background-color: transparent;
+    display: block;
+    width: 200px;
+    border-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-top: 50px;
+    cursor: pointer;
+    hyphenate-character: 20;
+    white-space: nowrap; 
+    overflow: hidden;
+
+}
+
+.secondSection .card:nth-child(2) {
+    background-color: #3d83df;
+}
+
+.secondSection .card:nth-child(3) {
+    background-color: #1b2734;
+
+}
+
+.secondSection .card:nth-child(3) select{
+    margin-top: 15px;
+}
+
+
+.thirdSection{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.thirdSection h2{
+    font-size: 24px;
+    padding: 0 10px;
+    color: #00b39b;
+
+}
+
+.thirdSection div {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-left: 50px;
+    
+}
+
+.thirdSection div a{
+    margin: 2px;
+    text-align: left;display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(100%) contrast(30%);
+    
+}
+
+.thirdSection div a:hover{
+    filter: none ;
+}
+
+
+.thirdSection div a svg{
+    width: 130px;
+}
+.thirdSection div a img{
+    width: 100px;
+}
+
+
+.fourthSection{
+    background: #e5faf8;
+    background-image: linear-gradient(-45deg,rgba(0,204,177,.01) 5%,rgba(61,199,223,.1));
+    padding: 20px 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.fourthSection .leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px 0 0;
+    width: 500px;
+}
+
+.fourthSection .leftSide h1{
+    font-size: 30px;
+    padding: 0 10px;
+    color: #00b39b;
+}
+
+.fourthSection .rightSide{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+
+.fourthSection .rightSide{
+    align-items: center;
+    justify-content: center;
+}
+
+.fourthSection .rightSide .card{
+    width: 160px;
+    padding: 15px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.fourthSection .rightSide .card h3{
+    font-size: 20px;
+    color: #00b39b;
+    text-align: center;
+}
+
+.fourthSection .rightSide .card img{
+    padding: 5px;
+    filter: invert(49%) sepia(44%) saturate(2967%) hue-rotate(135deg) brightness(90%) contrast(102%);
+/* background-color: #00b39b;
+ */}
+
+.fourthSection .rightSide .card p{
+   
+    font-size: 12px;
+    text-align: center;
+}
