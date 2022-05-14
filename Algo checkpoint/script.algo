@@ -1,15 +1,16 @@
 ALGORITHM three_nb_sum
 VAR
-    sentence : STRING;
-    nbr_char,nbr_word,nbr_vowel : INTEGER = 0 ;
-    i : INTEGER;
+    aux : CHAR;
+    sentance : STRING;
+    nbr_char,nbr_word,nbr_vowel,i : INTEGER = 0 ;
 
 BEGIN
-    
-    Read(sentence);
 
-    
-    
+    WHILE (Read(aux) <> ".") DO
+        sentance[i] := aux;
+        Read(aux)
+    END_WHILE
+
     BEGIN
         //read charcters condition 
         if(sentence[i] <> " ") than 
