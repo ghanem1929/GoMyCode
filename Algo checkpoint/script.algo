@@ -8,17 +8,14 @@ BEGIN
 
     WHILE (Read(aux) <> ".") DO
         sentance[i] := aux;
-        Read(aux)
-    END_WHILE
-
-    BEGIN
+        
         //read charcters condition 
         if(sentence[i] <> " ") than 
         BEGIN
             nbr_char = nbr_char + 1 ;
         END
 
-        //read words condition
+         //read words condition
         if(sentence[i] := " ") than
         BEGIN
             nbr_word = nbr_word + 1;
@@ -30,8 +27,9 @@ BEGIN
             nbr_vowel = nbr_vowel + 1;
         END
 
-        
-    END
+        Read(aux);
+        i++;
+    END_WHILE
 
     //print the result
     Write("in this sentance you have :\n charcters :" + nbr_char "\n words : " + nbr_word "\n vowels : " + nbr_vowel);
