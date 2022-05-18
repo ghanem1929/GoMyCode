@@ -6,23 +6,22 @@ VAR
     i,j :INTEGER;
     count : INTEGER = 1;
     htab1 : HASH_TABLE<INTEGER,INTEGER>;
-    htab2 : HASH_TABLE<INTEGER,INTEGER>;
 BEGIN
 
 //Problem 1, Solution 1
 
     FOR i FROM 0 TO set1.length - 1 STEP 1  DO
         FOR j FROM 0 TO set2.length - 1 STEP 1  DO
-          IF (set1[i] <> set2[j]) THEN
-              sum = sum + set1[i]
+          IF (set1[i] <> set2[j] AND j = set2.length - 1) THEN
+              sum := sum + set1[i]
           END_IF
         END_FOR
     END_FOR
 
-    FOR i FROM 0 TO set1.length - 1 STEP 1  DO
-        FOR j FROM 0 TO set2.length - 1 STEP 1  DO
-          IF (set2[i] <> set1[j]) THEN
-              sum = sum + set2[i]
+    FOR i FROM 0 TO set2.length - 1 STEP 1  DO
+        FOR j FROM 0 TO set1.length - 1 STEP 1  DO
+          IF (set2[i] <> set1[j] AND j = set1.length - 1) THEN
+              sum := sum + set2[i]
           END_IF
         END_FOR
     END_FOR
@@ -34,23 +33,36 @@ BEGIN
     
 
     FOR i FROM 0 TO set1.length -1 STEP 1  DO
-        FOR j FROM 0 TO set2.length -1 STEP 1  DO
-            IF (htab.lookup(set1[i]) = set2[j]) THEN
-                count := htab.get(set1[i]);
+            IF (htab.lookup(set1[i]) = TRUE) THEN 
                 htab.insert(set1[i],count+1);
             ELSE
                 htab.insert(set1[i],count);
             END_IF
-        END_FOR
+    END_FOR
+
+    FOR j FROM 0 TO set2.length -1 STEP 1  DO
+            IF (htab.lookup(set2[j]) = TRUE) THEN 
+                htab.insert(set2[j],count+1);
+            ELSE
+                htab.insert(set2[j],count);
+            END_IF
     END_FOR
    
 
     FOR i FROM 0 TO set1.length -1 STEP 1  DO
-       IF (htab.get(set1[i] = 1)) THEN
-           sum = sum + set1[i];
-           BREAK;
+       IF (htab.get(set1[i]) = 1) THEN
+           sum := sum + set1[i];
        END_IF
     END_FOR
+
+    FOR j FROM 0 TO set2.length -1 STEP 1  DO
+       IF (htab.get(set2[j]) = 1) THEN
+           sum := sum + set2[j];
+       END_IF
+    END_FOR
+
+
+
 
     FOR i FROM 0 TO set2.length -1 STEP 1  DO
         FOR j FROM 0 TO set1.length -1 STEP 1  DO
@@ -77,13 +89,13 @@ BEGIN
 
     FOR i FROM 0 TO set1.length - 1 STEP 1  DO
         FOR j FROM 0 TO set2.length - 1 STEP 1  DO
-          IF (set1[i] = set2[j]) THEN
-              sum := sum + set1[i]
+          IF (set1[i] = set2[j] AND j = set2.length - 1) THEN
+              sum := sum + set1[i] * 2
+              BREAK;
           END_IF
         END_FOR
     END_FOR
 
-    sum := sum * 2;
 
     //problem 2 , solution 2
 
