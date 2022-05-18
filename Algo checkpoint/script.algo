@@ -1,38 +1,47 @@
-ALGORITHM three_nb_sum
+ALGORITHM StringCheck
 VAR
-    aux : CHAR;
-    sentance : STRING;
-    nbr_char,nbr_word,nbr_vowel,i : INTEGER = 0 ;
-
+    currantChar : CHAR
+    word : INTEGER = 1;
+    caracter,vowel: INTEGER = 0;
 BEGIN
 
-    WHILE (Read(aux) <> ".") DO
-        sentance[i] := aux;
-        
-        //read charcters condition 
-        if(sentence[i] <> " ") than 
-        BEGIN
-            nbr_char = nbr_char + 1 ;
-        END
+    Read(currantChar)
+    WHILE (currantChar = ' ' or currantChar = '.') DO
+        Write("you can not begin the sentance with space or point !!")
+        Read(currantChar)
+    END_WHILE 
 
-         //read words condition
-        if(sentence[i] := " ") than
-        BEGIN
-            nbr_word = nbr_word + 1;
-        END
+    caracter := caracter + 1;
+            IF (currantChar = 'e' or
+                currantChar = 'a' or
+                currantChar = 'y' or
+                currantChar = 'o' or
+                currantChar = 'i' ) THEN
 
-        //read vowels condition
-        if( sentence[i] = 'e' || 'a' || 'y' || 'o' || 'i') than 
-        BEGIN
-            nbr_vowel = nbr_vowel + 1;
-        END
+                vowel := vowel +1;
 
-        Read(aux);
-        i++;
-    END_WHILE
+            END_IF
 
-    //print the result
-    Write("in this sentance you have :\n charcters :" + nbr_char "\n words : " + nbr_word "\n vowels : " + nbr_vowel);
-    
+    REPEAT
+        Read(currantChar)
+            caracter := caracter + 1;
+            IF (currantChar = ' ') THEN
+                word := word +1;
+            END_IF
+
+            IF (currantChar = 'e' or
+                currantChar = 'a' or
+                currantChar = 'y' or
+                currantChar = 'o' or
+                currantChar = 'i' ) THEN
+
+                vowel := vowel +1;
+
+            END_IF
+    UNTIL (currantChar = '.')
+
+    Write("in this sentance you have :")
+    Write("charcters : " + caracter);
+    Write("words : " + word);
+    Write("vowels : " + vowel);
 END
-
