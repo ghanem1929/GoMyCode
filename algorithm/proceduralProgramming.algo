@@ -1,0 +1,40 @@
+PROCEDURE dot_product(VAR Vector1,vector2 : ARRAY_OF FLOAT , vectorLength : INTEGER)
+    VAR
+        ps:FLOAT;
+        i:INTEGER;
+    BEGIN
+        FOR i FROM 0 TO vectorLength -1  STEP 1  DO
+            ps := ps + Vector1[i]*vector2[i]
+        END_FOR
+    END
+
+
+ALGORITHM Dot product
+VAR
+    V1,V2 : ARRAY_OF FLOAT[50];
+    len, i :INTEGER;
+BEGIN
+
+    Write(Enter the vector dimension)
+    Read(len)
+
+    FOR i FROM 0 TO len-1 STEP 1  DO
+        Write("Enter vector 1")
+        Read(V1[i])
+    END_FOR
+    FOR i FROM 0 TO len-1 STEP 1  DO
+        Write("Enter vector 2")
+        Read(V2[i])
+    END_FOR
+
+    
+    dot_product(V1,V2,len)
+    IF (ps = 0) THEN
+        Write("the given vectors are orthogonal")
+        ELSE 
+        Write("the given vectors are not orthogonal")
+    END_IF
+
+
+    
+END
