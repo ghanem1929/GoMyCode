@@ -1,40 +1,55 @@
-PROCEDURE dot_product(VAR Vector1,vector2 : ARRAY_OF FLOAT , vectorLength : INTEGER)
+//procedure declaration
+PROCEDURE dot_product(Vector1,vector2 : ARRAY_OF FLOAT  ,VAR ps:FLOAT)
     VAR
-        ps:FLOAT;
         i:INTEGER;
     BEGIN
-        FOR i FROM 0 TO vectorLength -1  STEP 1  DO
-            ps := ps + Vector1[i]*vector2[i]
+        FOR i FROM 0 TO Vector1.length -1  STEP 1  DO
+            ps := ps + Vector1[i]*vector2[i];
         END_FOR
     END
+
+FUNCTION dotProduct(Vector1,Vector2 : ARRAY_OF FLOAT) : FLOAT
+VAR
+    i:INTEGER;
+    x : FLOAT;
+BEGIN
+    FOR i FROM 0 TO Vector1.length -1  STEP 1  DO
+            x := x + Vector1[i]*vector2[i];
+        END_FOR
+    RETURN x ;
+END
 
 
 ALGORITHM Dot product
 VAR
-    V1,V2 : ARRAY_OF FLOAT[50];
-    len, i :INTEGER;
+    Mat : ARRAY_OF FLOAT[][];
+    i,j,k,L,C :INTEGER;
+    ps : FLOAT;
+
 BEGIN
-
-    Write(Enter the vector dimension)
-    Read(len)
-
-    FOR i FROM 0 TO len-1 STEP 1  DO
-        Write("Enter vector 1")
-        Read(V1[i])
-    END_FOR
-    FOR i FROM 0 TO len-1 STEP 1  DO
-        Write("Enter vector 2")
-        Read(V2[i])
-    END_FOR
-
+    REPEAT
+        Read(L)
+    UNTIL (L > 0 AND L % 2 = 0)
     
-    dot_product(V1,V2,len)
-    IF (ps = 0) THEN
-        Write("the given vectors are orthogonal")
+    REPEAT
+        Read(C)
+    UNTIL (L > 1)
+
+    FOR i FROM 0 TO L-1 STEP 1  DO
+        FOR j FROM 0 TO C-1 STEP 1  DO
+            Read(Mat[L][C])
+        END_FOR
+    END_FOR
+
+    FOR k FROM 0 TO L-1 STEP 2  DO
+        dot_product(Mat[k],Mat[k+1],ps);
+        ps := dotProduct(Mat[K],Mat[k+1]);
+        IF (ps = 0) THEN
+        Write("the given vectors are orthogonal");
         ELSE 
-        Write("the given vectors are not orthogonal")
-    END_IF
+        Write("the given vectors are not orthogonal");
+        END_IF 
 
-
-    
+    END_FOR
+       
 END

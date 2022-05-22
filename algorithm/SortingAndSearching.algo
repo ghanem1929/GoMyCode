@@ -1,0 +1,25 @@
+PROCEDURE swap(VAR val1,val2:INTEGER)
+VAR
+    aux:INTEGER
+BEGIN
+    aux:=val1;
+    val1:=val2;
+    val2:=aux;
+END
+
+ALGORITHM CardGame
+VAR
+    i,GivenNumber:INTEGER
+    cards : ARRAY_OF INTEGER[];
+BEGIN
+    Write("enter the first card:")
+    Read(card[0]);
+    FOR i FROM 1 TO cards.length STEP 1  DO
+        Read(cards[i]);
+        IF (cards[i]> cards[i-1]) THEN
+            swap(cards[i],cards[i-1]);
+        END_IF
+    END_FOR
+
+
+END
