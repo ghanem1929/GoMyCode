@@ -1,25 +1,25 @@
-PROCEDURE swap(VAR val1,val2:INTEGER)
+PROCEDURE insertion(Var t: ARRAY_OF INTEGER)
 VAR
-    aux:INTEGER
+    step, j, key: INTEGER;
 BEGIN
-    aux:=val1;
-    val1:=val2;
-    val2:=aux;
+    FOR step FROM 1 TO t.length-1 DO
+        key:=t[step];
+        j:=step-1;
+        WHILE (j>=0 and key<t[j]) DO
+            t[j+1]:=t[j];
+            j:=j-1;
+        END_WHILE
+        t[j+1]:=key;
+    END_FOR
 END
 
-ALGORITHM CardGame
+
+ALGORITHM algorithm_name
 VAR
-    i,GivenNumber:INTEGER
-    cards : ARRAY_OF INTEGER[];
+    t: ARRAY_OF INTEGER[100];
+    j,key,step,n:INTEGER;
 BEGIN
-    Write("enter the first card:")
-    Read(card[0]);
-    FOR i FROM 1 TO cards.length STEP 1  DO
-        Read(cards[i]);
-        IF (cards[i]> cards[i-1]) THEN
-            swap(cards[i],cards[i-1]);
-        END_IF
-    END_FOR
-
-
+    insertion(t);
+    
+END
 END
