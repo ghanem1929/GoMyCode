@@ -1,0 +1,88 @@
+.AppContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftCard{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin: 10px;
+  width: 30vw;
+  height: 80vh;
+  /* background-color: #242F9B; */
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.closeIcon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 17px;
+}
+
+.cardTitle{
+  font-size: 26px;
+  padding: 20px 0px;
+}
+.label{
+  font-size: 16px
+
+}
+
+.inputs{
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  border-color: #DBDFFD;
+  
+}
+.intrrest{
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; */
+  position: relative;
+  padding: 10px 0;
+}
+.collapseBtn{
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #6c6e7b;
+  
+}
+
+.list{
+  list-style: none;
+
+}
+li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  color: #646FD4;
+}
+li:hover{
+  display: inline;
+  padding: 5px 10px;
+  background-color: #242F9B;
+  color: white;
+  cursor: pointer;
+
+}
